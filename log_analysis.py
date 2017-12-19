@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# implementation of log reporting tool
+# Implementation of a log analysis tool
 
 import psycopg2
 import datetime
