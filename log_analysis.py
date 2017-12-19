@@ -46,3 +46,8 @@ def err_request_day():
         print("{} — {:.1%} errors".format(
                 record[0].strftime("%B %d, %Y"), record[1]))
     return
+
+if __name__ == '__main__':
+    top_three_article()
+    most_pop_author()
+    err_request_day()
