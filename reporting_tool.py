@@ -4,6 +4,7 @@
 # create view date_overview as select date_trunc('day', time) as day, cast(sum(case when status!='200 OK' then 1 else 0 end) as real) / cast(sum(case when status!='' then 1 else 0 end) as real) as err_ratio from log group by day order by day;
 
 import psycopg2
+import datetime
 
 def top_three_article():
     #TODO DESC
@@ -39,7 +40,7 @@ def err_request_day():
     ans = c.fetchall()
     db.close()
     for record in ans:
-        print ("Date : {}\nRatio : {}".format(record[0],record[1]))
+        print ("{} — {:.1%} errors".format(record[0].strftime("%B %d, %Y"),record[1]))
     return
 
 
