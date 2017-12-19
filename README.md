@@ -17,6 +17,11 @@ create view date_overview as
   order by day;
 ```
 ## Usage
+### Print directly
+```sh
+$ python log_analysis.py
+```
+### Import as a module
 ```python
 >>> import log_analysis
 >>> log_analysis.top_three_article()
