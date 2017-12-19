@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # Implementation of a log analysis tool
 
 import psycopg2
