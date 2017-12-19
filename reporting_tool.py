@@ -36,5 +36,18 @@ def most_pop_author():
     print ("{} — {} views".format(ans[3][0],ans[3][1]))
     return
 
+def err_request_day():
+    #TODO DESC
+    db = psycopg2.connect("dbname=news")
+    c = db.cursor()
+    c.execute("select day, err_ratio from date_overview where err_ratio > 0.01")
+    ans = c.fetchall()
+    db.close()
+    #TODO use for loop?
+    print ("Date : {}\nRatio : {}".format(ans[0][0],ans[0][1]))
+    return
+
+
 top_three_article()
 most_pop_author()
+err_request_day()
