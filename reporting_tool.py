@@ -13,10 +13,8 @@ def top_three_article():
     c.execute("select title, hits from valid_hits limit 3")
     ans = c.fetchall()
     db.close()
-    #TODO use for loop?
-    print ("\"{}\" — {} views".format(ans[0][0],ans[0][1]))
-    print ("\"{}\" — {} views".format(ans[1][0],ans[1][1]))
-    print ("\"{}\" — {} views".format(ans[2][0],ans[2][1]))
+    for i in range(3):
+        print ("\"{}\" — {} views".format(ans[i][0],ans[i][1]))
     return
 
 def most_pop_author():
@@ -29,11 +27,8 @@ def most_pop_author():
     group by authors.name order by popularity desc")
     ans = c.fetchall()
     db.close()
-    #TODO use for loop?
-    print ("{} — {} views".format(ans[0][0],ans[0][1]))
-    print ("{} — {} views".format(ans[1][0],ans[1][1]))
-    print ("{} — {} views".format(ans[2][0],ans[2][1]))
-    print ("{} — {} views".format(ans[3][0],ans[3][1]))
+    for author in ans:
+        print ("{} — {} views".format(author[0],author[1]))
     return
 
 def err_request_day():
@@ -43,8 +38,8 @@ def err_request_day():
     c.execute("select day, err_ratio from date_overview where err_ratio > 0.01")
     ans = c.fetchall()
     db.close()
-    #TODO use for loop?
-    print ("Date : {}\nRatio : {}".format(ans[0][0],ans[0][1]))
+    for record in ans:
+        print ("Date : {}\nRatio : {}".format(record[0],record[1]))
     return
 
 
