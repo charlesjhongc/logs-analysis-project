@@ -25,5 +25,8 @@ create view date_overview as
 ```
 ## Architecture of log_analysis
 - top_three_article()
+  List the most popular three articles of all time.
 - most_pop_author()
+  List the most popular article authors of all time.
 - err_request_day()
+  List date with more than 1% of requests lead to errors.
