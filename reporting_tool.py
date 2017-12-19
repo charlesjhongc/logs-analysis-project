@@ -14,7 +14,7 @@ def top_three_article():
     ans = c.fetchall()
     db.close()
     for i in range(3):
-        print ("\"{}\" — {} views".format(ans[i][0], ans[i][1]))
+        print("\"{}\" — {} views".format(ans[i][0], ans[i][1]))
     return
 
 
@@ -29,7 +29,7 @@ def most_pop_author():
     ans = c.fetchall()
     db.close()
     for author in ans:
-        print ("{} — {} views".format(author[0], author[1]))
+        print("{} — {} views".format(author[0], author[1]))
     return
 
 
@@ -42,8 +42,8 @@ def err_request_day():
     ans = c.fetchall()
     db.close()
     for record in ans:
-        print ("{} — {:.1%} errors".format(
-            record[0].strftime("%B %d, %Y"), record[1]))
+        print("{} — {:.1%} errors".format(
+                record[0].strftime("%B %d, %Y"), record[1]))
     return
 
 
