@@ -21,7 +21,10 @@ def most_pop_author():
     #TODO DESC
     db = psycopg2.connect("dbname=news")
     c = db.cursor()
-    c.execute("select authors.name, sum(valid_hits.hits) as popularity from authors, articles, valid_hits where authors.id = articles.author and articles.title = valid_hits.title group by authors.name order by popularity desc")
+    c.execute("select authors.name, sum(valid_hits.hits) as popularity\
+    from authors, articles, valid_hits\
+    where authors.id = articles.author and articles.title = valid_hits.title\
+    group by authors.name order by popularity desc")
     ans = c.fetchall()
     db.close()
     #TODO use for loop?
