@@ -1,5 +1,6 @@
 # Logs Analysis Project
-## Create 2 SQL views first
+## Instructions
+### [Step1]Create 2 SQL views first
 ```sql
 create view valid_hits as
   select articles.title, count(*) as hits
@@ -16,12 +17,12 @@ create view date_overview as
   group by day
   order by day;
 ```
-## Usage
-### Print directly
+### [Step2]
+#### [Option1]Use directly
 ```sh
 $ python log_analysis.py
 ```
-### Import as a module
+#### [Option2]Import as a module
 ```python
 >>> import log_analysis
 >>> log_analysis.top_three_article()
