@@ -1,4 +1,21 @@
 # Logs Analysis Project
+## About This Project
+You've been hired onto a team working on a newspaper site. The user-facing newspaper site frontend itself, and the database behind it, are already built and running. You've been asked to build an internal reporting tool that will use information from the database to discover what kind of articles the site's readers like.
+
+The database contains newspaper articles, as well as the web server log for the site. The log has a database row for each time a reader loaded a web page. Using that information, your code will answer questions about the site's user activity.
+
+The program you write in this project will run from the command line. It won't take any input from the user. Instead, it will connect to that database, use SQL queries to analyze the log data, and print out the answers to some questions.
+## Goal
+- Find the most popular three articles of all time
+- Find the most popular article authors of all time
+- On which days did more than 1% of requests lead to errors?
+## Provided Database
+Click [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) to download given data.
+
+Create a database call news using PostgreSQL and import data from the file you just download
+```sql
+psql -d news -f newsdata.sql
+```
 ## Instructions
 ### [Step1]Create 2 SQL views first
 ```sql
